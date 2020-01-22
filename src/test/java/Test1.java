@@ -1,10 +1,12 @@
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class TestExample {
+public class Test1 {
     private AppiumDriver driver;
 
     @BeforeClass
@@ -23,14 +25,20 @@ public class TestExample {
     }
 
     @Test
-    public void testing() throws MalformedURLException {
-
-     }
+    public void valid_UserCredential() throws MalformedURLException {
+        driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.ImageButton")).click();
+        driver.findElement(By.id("com.vrproductiveapps.whendo:id/noteTextTitle")).sendKeys("eynar");
+        driver.findElement(By.id("com.vrproductiveapps.whendo:id/noteTextNotes")).sendKeys("eynar");
+        driver.findElement(By.id("com.vrproductiveapps.whendo:id/saveItem")).click();
+        boolean isDisplayed=driver.findElement(By.xpath("//*[@text='eynar']")).isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
 
     @AfterMethod
     public void afterMethod() throws InterruptedException {
         Thread.sleep(5000);
         driver.quit();
+
     }
 
     @AfterClass
