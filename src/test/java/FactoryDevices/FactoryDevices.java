@@ -12,7 +12,6 @@ public class FactoryDevices {
                 System.out.println("CLOUD DEVICE");
                 device = new AndroidCloud();
                 break;
-
         }
         return device;
     }

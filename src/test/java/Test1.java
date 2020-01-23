@@ -26,7 +26,7 @@ public class Test1 {
 
     @Test
     public void valid_UserCredential() throws MalformedURLException {
-        driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.ImageButton")).click();
+        driver.findElement(By.id("com.vrproductiveapps.whendo:id/fab")).click();
         driver.findElement(By.id("com.vrproductiveapps.whendo:id/noteTextTitle")).sendKeys("eynar");
         driver.findElement(By.id("com.vrproductiveapps.whendo:id/noteTextNotes")).sendKeys("eynar");
         driver.findElement(By.id("com.vrproductiveapps.whendo:id/saveItem")).click();
