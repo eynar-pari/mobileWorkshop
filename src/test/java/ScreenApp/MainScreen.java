@@ -8,7 +8,7 @@ public class MainScreen {
     public Button plusButton;
 
     public MainScreen(){
-        plusButton= new Button(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.ImageButton"));
+        plusButton= new Button(By.id("com.vrproductiveapps.whendo:id/fab"));
     }
 
     public boolean isTaskDisplayed(String nameTask){

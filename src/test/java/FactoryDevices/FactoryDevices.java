@@ -9,7 +9,8 @@ public class FactoryDevices {
                 device = new Android();
                 break;
             default:
-                device = new Android();
+                System.out.println("CLOUD DEVICE");
+                device = new AndroidCloud();
                 break;
 
         }
