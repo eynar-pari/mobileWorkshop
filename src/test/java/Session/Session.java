@@ -3,6 +3,7 @@ package Session;
 import FactoryDevices.FactoryDevices;
 import io.appium.java_client.AppiumDriver;
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 public class Session {
 
@@ -10,7 +11,8 @@ public class Session {
     private AppiumDriver driver=null;
 
     private Session()  {
-        driver= FactoryDevices.make("android").create();
+        driver= FactoryDevices.make("androidcloud").create();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     public static Session getSesion()  {
