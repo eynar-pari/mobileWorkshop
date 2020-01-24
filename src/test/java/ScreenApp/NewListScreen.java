@@ -10,8 +10,8 @@ public class NewListScreen {
     public Button saveButton;
 
     public NewListScreen(){
-       titleTextBox= new TextBox(By.id("com.vrproductiveapps.whendo:id/noteTextTitle"));
-        notesTextBox= new TextBox(By.id("com.vrproductiveapps.whendo:id/noteTextNotes"));
-       saveButton= new Button(By.id("com.vrproductiveapps.whendo:id/saveItem"));
+       titleTextBox= new TextBox(By.id("com.vrproductiveapps.whendo:id/noteTextTitle"),"[title] textbox");
+        notesTextBox= new TextBox(By.id("com.vrproductiveapps.whendo:id/noteTextNotes"),"[notes] textbox");
+       saveButton= new Button(By.id("com.vrproductiveapps.whendo:id/saveItem"),"[save] button");
     }
 }

@@ -1,19 +1,22 @@
 package Controls;
 
 import Session.Session;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.net.MalformedURLException;
 
 public class Control {
     protected WebElement control;
     protected By locator;
+    protected String myName;
 
-    public Control(By locator){
+
+    public Control(By locator, String myName){
         this.locator= locator;
+        this.myName=myName;
     }
 
     protected WebElement findControl() throws NoSuchElementException {
@@ -32,11 +35,13 @@ public class Control {
 
     public void click() {
         control=findControl();
+        stepLogger("Click on "+myName);
         control.click();
     }
 
     public void set(String value) {
         control=findControl();
+        stepLogger("Set '"+value+"' on "+myName);
         control.clear();
         control.sendKeys(value);
     }
@@ -44,9 +49,16 @@ public class Control {
     public boolean isDisplayed(){
         try {
             control=findControl();
+            stepLogger("The ["+myName+"] is displayed");
             return control.isDisplayed();
         }catch (Exception e){
+            stepLogger("The ["+myName+"] is not displayed");
             return false;
         }
     }
+
+    @Step("{0}")
+    public void stepLogger(String accion){
+    }
+
 }
